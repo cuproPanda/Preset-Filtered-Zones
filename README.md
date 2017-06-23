@@ -1,4 +1,4 @@
-# Preset Filtered Zones
+# Preset Filtered Zones Japanese Translation
 
 This is the Fork page for adding Japanese translation to "Preset Filtered Zones" created by cuproPanda.
 
