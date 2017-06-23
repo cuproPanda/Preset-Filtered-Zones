@@ -1,5 +1,7 @@
 # Preset Filtered Zones
 
-Adds six new stockpile zones which are already filtered for storing Meals, Meat, Vegetables, Medicine, Joy, or Animals. Freezer creation is a breeze!
+This is the Fork page for adding Japanese translation to "Preset Filtered Zones" created by cuproPanda.
 
-![Preview](https://github.com/cuproPanda/FZN/blob/master/About/Preview.png?raw=true)
+The image below is a sample image of the part whose zone name label is not translatable.
+
+![Preview](https://github.com/Proxyer/FZN/blob/master/img/img01.png?raw=true)
