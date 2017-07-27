@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+	<FZN_LabelMealZone>Meal Stockpile</FZN_LabelMealZone>
+	<FZN_LabelMedZone>Medicine Stockpile</FZN_LabelMedZone>
+	<FZN_LabelMeatZone>Meat StockPile</FZN_LabelMeatZone>
+	<FZN_LabelVegZone>Veg Stockpile</FZN_LabelVegZone>
+	<FZN_LabelJoyZone>Joy Stockpile</FZN_LabelJoyZone>
+	<FZN_LabelAnimalZone>Animal Stockpile</FZN_LabelAnimalZone>
+	<FZN_LabelOutdoorZone>Outdoor Stockpile</FZN_LabelOutdoorZone>
+	
 	<FZN_DescriptionMealZone>A preset stockpile for storing rottable meals.</FZN_DescriptionMealZone>
 	<FZN_DescriptionMedZone>A preset stockpile for storing all medicine.</FZN_DescriptionMedZone>
 	<FZN_DescriptionMeatZone>A preset stockpile for storing rottable meats.</FZN_DescriptionMeatZone>

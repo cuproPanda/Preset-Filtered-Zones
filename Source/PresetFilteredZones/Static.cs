@@ -15,6 +15,14 @@ namespace PresetFilteredZones {
     public static DesignationDef DesAnimalZone =   DefDatabase<DesignationDef>.GetNamed("FZN_Designator_AnimalZoneAdd");
     public static DesignationDef DesOutdoorZone =  DefDatabase<DesignationDef>.GetNamed("FZN_Designator_OutdoorZoneAdd");
 
+    public const string MealZoneLabel =      "FZN_LabelMealZone";
+    public const string MedZoneLabel =       "FZN_LabelMedZone";
+    public const string MeatZoneLabel =      "FZN_LabelMeatZone";
+    public const string VegZoneLabel =       "FZN_LabelVegZone";
+    public const string JoyZoneLabel =       "FZN_LabelJoyZone";
+    public const string AnimalZoneLabel =    "FZN_LabelAnimalZone";
+    public const string OutdoorZoneLabel =   "FZN_LabelOutdoorZone";
+
     public static string MealZoneDesc =      "FZN_DescriptionMealZone".Translate();
     public static string MedZoneDesc =       "FZN_DescriptionMedZone".Translate();
     public static string MeatZoneDesc =      "FZN_DescriptionMeatZone".Translate();
@@ -47,7 +55,7 @@ namespace PresetFilteredZones {
       DescriptionAttribute[] attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
       if (attributes != null && attributes.Length > 0) {
-        return attributes[0].description;
+        return attributes[0].description.Translate();
       }
       return preset.ToString();
     }
