@@ -111,5 +111,23 @@ namespace PresetFilteredZones {
 
       return filter;
     }
+
+
+    public static ThingFilter DefaultFilter_RottableZone()
+    {
+      List<ThingDef> allDefs = DefDatabase<ThingDef>.AllDefsListForReading;
+      ThingFilter filter = new ThingFilter();
+      filter.SetDisallowAll();
+
+      foreach (var def in allDefs)
+      {
+        if (def.HasComp(typeof(CompRottable)))
+        {
+          filter.SetAllow(def, true);
+        }
+      }
+
+      return filter;
+    }
   }
 }

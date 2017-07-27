@@ -20,7 +20,9 @@ namespace PresetFilteredZones {
     [Description(Static.AnimalZoneLabel)]
     Animal,
     [Description(Static.OutdoorZoneLabel)]
-    Outdoor
+    Outdoor,
+    [Description(Static.RottableZoneLabel)]
+    Rottable
   }
 
 
@@ -36,6 +38,7 @@ namespace PresetFilteredZones {
     private static List<Color> joyZonePalette;
     private static List<Color> animalZonePalette;
     private static List<Color> outdoorZonePalette;
+    private static List<Color> rottableZonePalette;
 
 
     static PresetZoneColorUtility() {
@@ -46,6 +49,7 @@ namespace PresetFilteredZones {
       PaintJoyZone();
       PaintAnimalZone();
       PaintOutdoorZone();
+      PaintRottableZone();
     }
 
 
@@ -70,6 +74,10 @@ namespace PresetFilteredZones {
       }
       if (type == PresetZoneType.Outdoor) {
         return outdoorZonePalette.RandomElement();
+      }
+      if (type == PresetZoneType.Rottable)
+      {
+        return rottableZonePalette.RandomElement();
       }
 
       return ColorLibrary.Grey;
@@ -176,6 +184,16 @@ namespace PresetFilteredZones {
         float v = mealZonePalette[c].grayscale;
         outdoorZonePalette.Add(new Color(v, v, v, ZoneOpacity));
       }
+    }
+
+
+    private static void PaintRottableZone()
+    {
+      rottableZonePalette = Dilute(new List<Color>() {
+        ColorLibrary.LightBlue,
+        ColorLibrary.Cyan,
+        ColorLibrary.Blue
+      });
     }
   }
 }

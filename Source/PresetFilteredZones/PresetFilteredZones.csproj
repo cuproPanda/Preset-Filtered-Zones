@@ -48,6 +48,7 @@
     <Compile Include="Designator_MedZoneAdd.cs" />
     <Compile Include="Designator_OutdoorZoneAdd.cs" />
     <Compile Include="Designator_PresetZoneAdd.cs" />
+    <Compile Include="Designator_RottableZoneAdd.cs" />
     <Compile Include="Designator_VegZoneAdd.cs" />
     <Compile Include="PresetZoneColorUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
