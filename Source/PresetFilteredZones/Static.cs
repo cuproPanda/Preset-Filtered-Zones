@@ -13,8 +13,9 @@ namespace PresetFilteredZones {
     public static DesignationDef DesVegZone =      DefDatabase<DesignationDef>.GetNamed("FZN_Designator_VegZoneAdd");
     public static DesignationDef DesJoyZone =      DefDatabase<DesignationDef>.GetNamed("FZN_Designator_JoyZoneAdd");
     public static DesignationDef DesAnimalZone =   DefDatabase<DesignationDef>.GetNamed("FZN_Designator_AnimalZoneAdd");
-    public static DesignationDef DesOutdoorZone =  DefDatabase<DesignationDef>.GetNamed("FZN_Designator_OutdoorZoneAdd");
     public static DesignationDef DesRottableZone = DefDatabase<DesignationDef>.GetNamed("FZN_Designator_RottableZoneAdd");
+    public static DesignationDef DesIndoorZone =   DefDatabase<DesignationDef>.GetNamed("FZN_Designator_IndoorZoneAdd");
+    public static DesignationDef DesOutdoorZone =  DefDatabase<DesignationDef>.GetNamed("FZN_Designator_OutdoorZoneAdd");
 
     public const string MealZoneLabel =      "FZN_LabelMealZone";
     public const string MedZoneLabel =       "FZN_LabelMedZone";
@@ -22,8 +23,9 @@ namespace PresetFilteredZones {
     public const string VegZoneLabel =       "FZN_LabelVegZone";
     public const string JoyZoneLabel =       "FZN_LabelJoyZone";
     public const string AnimalZoneLabel =    "FZN_LabelAnimalZone";
-    public const string OutdoorZoneLabel =   "FZN_LabelOutdoorZone";
     public const string RottableZoneLabel =  "FZN_LabelRottableZone";
+    public const string IndoorZoneLabel =    "FZN_LabelIndoorZone";
+    public const string OutdoorZoneLabel =   "FZN_LabelOutdoorZone";
 
     public static string MealZoneDesc =      "FZN_DescriptionMealZone".Translate();
     public static string MedZoneDesc =       "FZN_DescriptionMedZone".Translate();
@@ -31,8 +33,9 @@ namespace PresetFilteredZones {
     public static string VegZoneDesc =       "FZN_DescriptionVegZone".Translate();
     public static string JoyZoneDesc =       "FZN_DescriptionJoyZone".Translate();
     public static string AnimalZoneDesc =    "FZN_DescriptionAnimalZone".Translate();
-    public static string OutdoorZoneDesc =   "FZN_DescriptionOutdoorZone".Translate();
     public static string RottableZoneDesc =  "FZN_DescriptionRottableZone".Translate();
+    public static string IndoorZoneDesc =    "FZN_DescriptionIndoorZone".Translate();
+    public static string OutdoorZoneDesc =   "FZN_DescriptionOutdoorZone".Translate();
     //public static string GizmoShadeLabel =  "FZN_GizmoShadeLabel".Translate();
     //public static string GizmoShadeDesc =   "FZN_GizmoShadeDesc".Translate();
 
@@ -42,8 +45,9 @@ namespace PresetFilteredZones {
     public static Texture2D TexVegZone =     ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileVeg",    true);
     public static Texture2D TexJoyZone =     ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileJoy",    true);
     public static Texture2D TexAnimalZone =  ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileAnimal", true);
-    public static Texture2D TexOutdoorZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileOutdoor", true);
     public static Texture2D TexRottableZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileRottable", true);
+    public static Texture2D TexIndoorZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileIndoor", true);
+    public static Texture2D TexOutdoorZone = ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileOutdoor", true);
 
     //public static Texture2D GizmoShadeMeal =    ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMeal", true);
     //public static Texture2D GizmoShadeMed =     ContentFinder<Texture2D>.Get("Cupro/UI/GizmoShadeMed", true);

@@ -78,11 +78,16 @@ namespace PresetFilteredZones {
       if (preset == PresetZoneType.Animal) {
         return DefaultFilters.DefaultFilter_AnimalZone();
       }
+      if (preset == PresetZoneType.Rottable)
+      {
+        return DefaultFilters.DefaultFilter_RottableZone();
+      }
+      if (preset == PresetZoneType.Indoor)
+      {
+        return DefaultFilters.DefaultFilter_IndoorZone();
+      }
       if (preset == PresetZoneType.Outdoor) {
         return DefaultFilters.DefaultFilter_OutdoorZone();
-      }
-      if (preset == PresetZoneType.Rottable) {
-        return DefaultFilters.DefaultFilter_RottableZone();
       }
       Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
       return DefaultFilters.DefaultFilter_SHTF();

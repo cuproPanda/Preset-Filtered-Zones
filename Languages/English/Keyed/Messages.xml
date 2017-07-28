@@ -7,8 +7,9 @@
 	<FZN_LabelVegZone>Veg Stockpile</FZN_LabelVegZone>
 	<FZN_LabelJoyZone>Joy Stockpile</FZN_LabelJoyZone>
 	<FZN_LabelAnimalZone>Animal Stockpile</FZN_LabelAnimalZone>
-	<FZN_LabelOutdoorZone>Outdoor Stockpile</FZN_LabelOutdoorZone>
 	<FZN_LabelRottableZone>Freezer Stockpile</FZN_LabelRottableZone>
+	<FZN_LabelIndoorZone>Indoor Stockpile</FZN_LabelIndoorZone>
+	<FZN_LabelOutdoorZone>Outdoor Stockpile</FZN_LabelOutdoorZone>
 	
 	<FZN_DescriptionMealZone>A preset stockpile for storing rottable meals.</FZN_DescriptionMealZone>
 	<FZN_DescriptionMedZone>A preset stockpile for storing all medicine.</FZN_DescriptionMedZone>
@@ -16,8 +17,9 @@
 	<FZN_DescriptionVegZone>A preset stockpile for storing rottable vegetables.</FZN_DescriptionVegZone>
 	<FZN_DescriptionJoyZone>A preset stockpile for storing all joy consumables.</FZN_DescriptionJoyZone>
 	<FZN_DescriptionAnimalZone>A preset stockpile for storing dead animals before being butchered.</FZN_DescriptionAnimalZone>
-	<FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that don't need to be indoors.</FZN_DescriptionOutdoorZone>
 	<FZN_DescriptionRottableZone>A preset stockpile for storing rottable things.</FZN_DescriptionRottableZone>
+	<FZN_DescriptionIndoorZone>A preset stockpile for storing resources that need to be indoors.</FZN_DescriptionIndoorZone>
+	<FZN_DescriptionOutdoorZone>A preset stockpile for storing resources that don't need to be indoors.</FZN_DescriptionOutdoorZone>
 	
 	<FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
 	<FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>

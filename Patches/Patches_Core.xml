@@ -49,18 +49,25 @@
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
-					<li>PresetFilteredZones.Designator_OutdoorZoneAdd</li>
+					<li>PresetFilteredZones.Designator_RottableZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
 				<value>
-					<li>PresetFilteredZones.Designator_RottableZoneAdd</li>
+					<li>PresetFilteredZones.Designator_IndoorZoneAdd</li>
 				</value>
 				<order>Append</order>
 			</li>
-		</Operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[DefName="Zone"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>PresetFilteredZones.Designator_OutdoorZoneAdd</li>
+				</value>
+				<order>Append</order>
+			</li>
+			</Operations>
 	</Operation>
 
 </Patch>

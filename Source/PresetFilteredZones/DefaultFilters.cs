@@ -94,40 +94,51 @@ namespace PresetFilteredZones {
       return filter;
     }
 
+    public static ThingFilter DefaultFilter_RottableZone()
+    {
+      var filter = new ThingFilter();
+      filter.SetDisallowAll(null, DefDatabase<SpecialThingFilterDef>.AllDefs);
 
-    public static ThingFilter DefaultFilter_OutdoorZone() {
-      List<ThingDef> list = new List<ThingDef>();
-      ThingFilter filter = new ThingFilter();
-      filter.SetDisallowAll();
-
-      list.AddRange(ThingCategoryDefOf.ResourcesRaw.DescendantThingDefs);
-      list.AddRange(ThingCategoryDefOf.Items.DescendantThingDefs);
-
-      for (int t = 0; t < list.Count; t++) {
-        if (list[t].GetStatValueAbstract(StatDefOf.DeteriorationRate) == 0 && !list[t].comps.Any(c => c is CompProperties_Rottable) && !list[t].IsIngestible) {
-          filter.SetAllow(list[t], true);
-        }
-      }
+      DefDatabase<ThingDef>.AllDefs
+        .Where(d => d.HasComp(typeof(CompRottable)))
+        .ToList()
+        .ForEach(d => filter.SetAllow(d, true));
+      
+      filter.SetAllow(SpecialThingFilterDef.Named("AllowRotten"), false);
+      filter.SetAllow(ThingCategoryDefOf.CorpsesHumanlike, false);
 
       return filter;
     }
 
 
-    public static ThingFilter DefaultFilter_RottableZone()
+    public static ThingFilter DefaultFilter_IndoorZone()
     {
-      List<ThingDef> allDefs = DefDatabase<ThingDef>.AllDefsListForReading;
-      ThingFilter filter = new ThingFilter();
-      filter.SetDisallowAll();
+      var filter = new ThingFilter();
+      filter.SetDisallowAll(null, DefDatabase<SpecialThingFilterDef>.AllDefs);
 
-      foreach (var def in allDefs)
-      {
-        if (def.HasComp(typeof(CompRottable)))
-        {
-          filter.SetAllow(def, true);
-        }
-      }
+      DefDatabase<ThingDef>.AllDefs
+        .Where(d => !d.HasComp(typeof(CompRottable)))
+        .Where(d => d.GetStatValueAbstract(StatDefOf.DeteriorationRate) > 0f)
+        .ToList()
+        .ForEach(d => filter.SetAllow(d, true));
+      
+      return filter;
+    }
+
+
+    public static ThingFilter DefaultFilter_OutdoorZone()
+    {
+      var filter = new ThingFilter();
+      filter.SetDisallowAll(null, DefDatabase<SpecialThingFilterDef>.AllDefs);
+
+      DefDatabase<ThingDef>.AllDefs
+        .Where(d => !d.HasComp(typeof(CompRottable)))
+        .Where(d => d.GetStatValueAbstract(StatDefOf.DeteriorationRate) == 0f)
+        .ToList()
+        .ForEach(d => filter.SetAllow(d, true));
 
       return filter;
+
     }
   }
 }
