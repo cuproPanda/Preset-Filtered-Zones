@@ -37,7 +37,7 @@ namespace PresetFilteredZones {
 
     protected override Color NextZoneColor {
       get {
-        return PresetZoneColorUtility.NewZoneColor(zoneType);
+        return color;
       }
     }
 
@@ -53,7 +53,7 @@ namespace PresetFilteredZones {
       settings.filter = SetFilterFromPreset(preset);
       settings.Priority = StoragePriority.Important;
       slotGroup = new SlotGroup(this);
-      color = NextZoneColor;
+      color = PresetZoneColorUtility.NewZoneColor(zoneType);
     }
 
 
