@@ -9,6 +9,54 @@ namespace PresetFilteredZones {
   public static class DefaultFilters {
 
 
+    public static ThingFilter GetFilterFromPreset(PresetZoneType preset)
+    {
+      List<ThingDef> database = DefDatabase<ThingDef>.AllDefsListForReading;
+      ThingFilter f;
+
+      switch (preset)
+      {
+        case PresetZoneType.None:
+          Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
+          f = DefaultFilter_SHTF();
+          break;
+        case PresetZoneType.Meal:
+          f = DefaultFilter_MealZone();
+          break;
+        case PresetZoneType.Meat:
+          f = DefaultFilter_MeatZone();
+          break;
+        case PresetZoneType.Veg:
+          f = DefaultFilter_VegZone();
+          break;
+        case PresetZoneType.Med:
+          f = DefaultFilter_MedZone();
+          break;
+        case PresetZoneType.Joy:
+          f = DefaultFilter_JoyZone();
+          break;
+        case PresetZoneType.Animal:
+          f = DefaultFilter_AnimalZone();
+          break;
+        case PresetZoneType.Rottable:
+          f = DefaultFilter_RottableZone();
+          break;
+        case PresetZoneType.Indoor:
+          f = DefaultFilter_IndoorZone();
+          break;
+        case PresetZoneType.Outdoor:
+          f = DefaultFilter_OutdoorZone();
+          break;
+        default:
+          Log.Error("PresetFilteredZones:: Trying to make a zone with unknown PresetZoneType.");
+          f = DefaultFilter_SHTF();
+          break;
+      }
+
+      return f;
+    }
+
+
     public static ThingFilter DefaultFilter_SHTF() {
       ThingFilter filter = new ThingFilter();
       filter.SetAllow(ThingCategoryDefOf.Root, true);
@@ -138,7 +186,6 @@ namespace PresetFilteredZones {
         .ForEach(d => filter.SetAllow(d, true));
 
       return filter;
-
     }
   }
 }

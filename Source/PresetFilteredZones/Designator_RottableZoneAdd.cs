@@ -5,9 +5,9 @@ namespace PresetFilteredZones
   {
     public Designator_RottableZoneAdd()
     {
-      zoneTypeToPlace = typeof(Zone_PresetStockpile);
-      preset = PresetZoneType.Rottable;
-      defaultLabel = Static.GetEnumDescription(preset);
+      zoneTypeToPlace = typeof(RimWorld.Zone_Stockpile);
+      presetZoneType = PresetZoneType.Rottable;
+      defaultLabel = Static.GetEnumDescription(presetZoneType);
       defaultDesc = Static.RottableZoneDesc;
       icon = Static.TexRottableZone;
       def = Static.DesRottableZone;
