@@ -36,10 +36,10 @@ namespace PresetFilteredZones {
     public static string RottableZoneDesc =  "FZN_DescriptionRottableZone".Translate();
     public static string IndoorZoneDesc =    "FZN_DescriptionIndoorZone".Translate();
     public static string OutdoorZoneDesc =   "FZN_DescriptionOutdoorZone".Translate();
-    //public static string GizmoShadeLabel =  "FZN_GizmoShadeLabel".Translate();
-    //public static string GizmoShadeDesc =   "FZN_GizmoShadeDesc".Translate();
+	//public static string GizmoShadeLabel =  "FZN_GizmoShadeLabel".Translate();
+	//public static string GizmoShadeDesc =   "FZN_GizmoShadeDesc".Translate();
 
-    public static Texture2D TexMealZone =    ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMeal",   true);
+	public static Texture2D TexMealZone =    ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMeal",   true);
     public static Texture2D TexMedZone =     ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMed",    true);
     public static Texture2D TexMeatZone =    ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileMeat",   true);
     public static Texture2D TexVegZone =     ContentFinder<Texture2D>.Get("Cupro/UI/ZoneCreate_StockpileVeg",    true);

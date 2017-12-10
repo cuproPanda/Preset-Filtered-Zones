@@ -37,7 +37,7 @@ namespace PresetFilteredZones {
 
     protected override Color NextZoneColor {
       get {
-        return color;
+        return PresetZoneColorUtility.NewZoneColor(zoneType);
       }
     }
 
@@ -49,11 +49,12 @@ namespace PresetFilteredZones {
     public Zone_PresetStockpile(PresetZoneType preset, ZoneManager zoneManager) : base(Static.GetEnumDescription(preset), zoneManager) {
       zoneType = preset;
       cells = AllSlotCells().ToList();
-      settings = new StorageSettings(this);
-      settings.filter = SetFilterFromPreset(preset);
-      settings.Priority = StoragePriority.Important;
-      slotGroup = new SlotGroup(this);
-      color = PresetZoneColorUtility.NewZoneColor(zoneType);
+			settings = new StorageSettings(this) {
+				filter = SetFilterFromPreset(preset),
+				Priority = StoragePriority.Important
+			};
+			slotGroup = new SlotGroup(this);
+      color = NextZoneColor;
     }
 
 
@@ -78,18 +79,13 @@ namespace PresetFilteredZones {
       if (preset == PresetZoneType.Animal) {
         return DefaultFilters.DefaultFilter_AnimalZone();
       }
-      if (preset == PresetZoneType.Rottable)
-      {
-        return DefaultFilters.DefaultFilter_RottableZone();
-      }
-      if (preset == PresetZoneType.Indoor)
-      {
-        return DefaultFilters.DefaultFilter_IndoorZone();
-      }
       if (preset == PresetZoneType.Outdoor) {
         return DefaultFilters.DefaultFilter_OutdoorZone();
       }
-      Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
+			if (preset == PresetZoneType.Indoor) {
+				return DefaultFilters.DefaultFilter_IndoorZone();
+			}
+			Log.Error("PresetFilteredZones:: Trying to make a zone with PresetZoneType of None.");
       return DefaultFilters.DefaultFilter_SHTF();
     }
 
