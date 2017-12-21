@@ -38,8 +38,8 @@
 	</DesignationDef>
 	
 	<DesignationDef>
-		<defName>FZN_Designator_OutdoorZoneAdd</defName>
-		<texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
+		<defName>FZN_Designator_RottableZoneAdd</defName>
+		<texturePath>Cupro/UI/ZoneCreate_StockpileRottable</texturePath>
 		<targetType>Cell</targetType>
 	</DesignationDef>
 	
@@ -48,5 +48,11 @@
 		<texturePath>Cupro/UI/ZoneCreate_StockpileIndoor</texturePath>
 		<targetType>Cell</targetType>
 	</DesignationDef>
-
+	
+	<DesignationDef>
+		<defName>FZN_Designator_OutdoorZoneAdd</defName>
+		<texturePath>Cupro/UI/ZoneCreate_StockpileOutdoor</texturePath>
+		<targetType>Cell</targetType>
+	</DesignationDef>
+	
 </Defs>

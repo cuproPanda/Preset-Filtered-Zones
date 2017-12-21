@@ -3,32 +3,37 @@
 using UnityEngine;
 using Verse;
 
-namespace PresetFilteredZones {
+namespace PresetFilteredZones
+{
 
-  public enum PresetZoneType {
+  public enum PresetZoneType
+  {
     None,
-    [Description("Meal Stockpile")]
+    [Description(Static.MealZoneLabel)]
     Meal,
-    [Description("Meat StockPile")]
+    [Description(Static.MeatZoneLabel)]
     Meat,
-    [Description("Veg Stockpile")]
+    [Description(Static.VegZoneLabel)]
     Veg,
-    [Description("Medicine Stockpile")]
+    [Description(Static.MedZoneLabel)]
     Med,
-    [Description("Joy Stockpile")]
+    [Description(Static.JoyZoneLabel)]
     Joy,
-    [Description("Animal Stockpile")]
+    [Description(Static.AnimalZoneLabel)]
     Animal,
-    [Description("Outdoor Stockpile")]
-    Outdoor,
-		[Description("Indoor Stockpile")]
-		Indoor
-	}
+    [Description(Static.RottableZoneLabel)]
+    Rottable,
+    [Description(Static.IndoorZoneLabel)]
+    Indoor,
+    [Description(Static.OutdoorZoneLabel)]
+    Outdoor
+  }
 
 
 
   [StaticConstructorOnStartup]
-  public static class PresetZoneColorUtility {
+  public static class PresetZoneColorUtility
+  {
 
     private const float ZoneOpacity = 0.15f;
     private static List<Color> mealZonePalette;
@@ -37,40 +42,61 @@ namespace PresetFilteredZones {
     private static List<Color> vegZonePalette;
     private static List<Color> joyZonePalette;
     private static List<Color> animalZonePalette;
+    private static List<Color> rottableZonePalette;
+    private static List<Color> indoorZonePalette;
     private static List<Color> outdoorZonePalette;
 
 
-    static PresetZoneColorUtility() {
+    static PresetZoneColorUtility()
+    {
       PaintMealZone();
       PaintMedZone();
       PaintMeatZone();
       PaintVegZone();
       PaintJoyZone();
       PaintAnimalZone();
+      PaintRottableZone();
+      PaintIndoorZone();
       PaintOutdoorZone();
     }
 
 
-    public static Color NewZoneColor(PresetZoneType type) {
-      if (type == PresetZoneType.Meal) {
+    public static Color NewZoneColor(PresetZoneType type)
+    {
+      if (type == PresetZoneType.Meal)
+      {
         return mealZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Med) {
+      if (type == PresetZoneType.Med)
+      {
         return medZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Meat) {
+      if (type == PresetZoneType.Meat)
+      {
         return meatZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Veg) {
+      if (type == PresetZoneType.Veg)
+      {
         return vegZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Joy) {
+      if (type == PresetZoneType.Joy)
+      {
         return joyZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Animal) {
+      if (type == PresetZoneType.Animal)
+      {
         return animalZonePalette.RandomElement();
       }
-      if (type == PresetZoneType.Outdoor || type == PresetZoneType.Indoor) {
+      if (type == PresetZoneType.Rottable)
+      {
+        return rottableZonePalette.RandomElement();
+      }
+      if (type == PresetZoneType.Indoor)
+      {
+        return indoorZonePalette.RandomElement();
+      }
+      if (type == PresetZoneType.Outdoor)
+      {
         return outdoorZonePalette.RandomElement();
       }
 
@@ -78,9 +104,11 @@ namespace PresetFilteredZones {
     }
 
 
-    private static List<Color> Dilute(List<Color> palette) {
+    private static List<Color> Dilute(List<Color> palette)
+    {
       List<Color> dilutedColors = new List<Color>();
-      foreach (Color color in palette) {
+      foreach (Color color in palette)
+      {
         Color c = new Color(color.r, color.g, color.b, ZoneOpacity);
         dilutedColors.Add(c);
       }
@@ -88,7 +116,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintMealZone() {
+    private static void PaintMealZone()
+    {
       mealZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Purple,
         ColorLibrary.Violet,
@@ -104,7 +133,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintMedZone() {
+    private static void PaintMedZone()
+    {
       medZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Blue,
         ColorLibrary.BabyBlue,
@@ -119,7 +149,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintMeatZone() {
+    private static void PaintMeatZone()
+    {
       meatZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Red,
         ColorLibrary.Magenta,
@@ -136,7 +167,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintVegZone() {
+    private static void PaintVegZone()
+    {
       vegZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Green,
         ColorLibrary.PastelGreen,
@@ -150,7 +182,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintJoyZone() {
+    private static void PaintJoyZone()
+    {
       joyZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Orange,
         ColorLibrary.Yellow,
@@ -163,7 +196,8 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintAnimalZone() {
+    private static void PaintAnimalZone()
+    {
       animalZonePalette = Dilute(new List<Color>() {
         ColorLibrary.Brown,
         ColorLibrary.Leather,
@@ -172,9 +206,32 @@ namespace PresetFilteredZones {
     }
 
 
-    private static void PaintOutdoorZone() {
+    private static void PaintRottableZone()
+    {
+      rottableZonePalette = Dilute(new List<Color>() {
+        ColorLibrary.LightBlue,
+        ColorLibrary.Cyan,
+        ColorLibrary.Blue
+      });
+    }
+
+
+    private static void PaintIndoorZone()
+    {
+      indoorZonePalette = Dilute(new List<Color>() {
+        ColorLibrary.Teal,
+        ColorLibrary.DarkTeal,
+        ColorLibrary.Olive,
+        ColorLibrary.Maroon
+      });
+    }
+
+
+    private static void PaintOutdoorZone()
+    {
       outdoorZonePalette = new List<Color>();
-      for (int c = 0; c < mealZonePalette.Count; c++) {
+      for (int c = 0; c < mealZonePalette.Count; c++)
+      {
         float v = mealZonePalette[c].grayscale;
         outdoorZonePalette.Add(new Color(v, v, v, ZoneOpacity));
       }

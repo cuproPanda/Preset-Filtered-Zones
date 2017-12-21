@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<FZN_LabelMealZone>食品備蓄ゾーン</FZN_LabelMealZone>
+	<FZN_LabelMedZone>薬品備蓄ゾーン</FZN_LabelMedZone>
+	<FZN_LabelMeatZone>生肉備蓄ゾーン</FZN_LabelMeatZone>
+	<FZN_LabelVegZone>野菜備蓄ゾーン</FZN_LabelVegZone>
+	<FZN_LabelJoyZone>嗜好品備蓄ゾーン</FZN_LabelJoyZone>
+	<FZN_LabelAnimalZone>動物備蓄ゾーン</FZN_LabelAnimalZone>
+	<FZN_LabelRottableZone>冷凍ゾーン</FZN_LabelRottableZone>
+	<FZN_LabelIndoorZone>屋内備蓄ゾーン</FZN_LabelIndoorZone>
+	<FZN_LabelOutdoorZone>屋外備蓄ゾーン</FZN_LabelOutdoorZone>
+
+	<FZN_DescriptionMealZone>調理済みの食品を保存するための備蓄ゾーンを作成します。</FZN_DescriptionMealZone>
+	<FZN_DescriptionMedZone>薬品を保存するための備蓄ゾーンを作成します。</FZN_DescriptionMedZone>
+	<FZN_DescriptionMeatZone>生肉を保存するための備蓄ゾーンを作成します。</FZN_DescriptionMeatZone>
+	<FZN_DescriptionVegZone>野菜を保存するための備蓄ゾーンを作成します。</FZN_DescriptionVegZone>
+	<FZN_DescriptionJoyZone>嗜好品を保存するための備蓄ゾーンを作成します。</FZN_DescriptionJoyZone>
+	<FZN_DescriptionAnimalZone>生肉に加工する前の動物の死骸を保存するための備蓄ゾーンを作成します。</FZN_DescriptionAnimalZone>
+	<FZN_DescriptionRottableZone>腐敗するものを保存するための備蓄ゾーンを作成します。</FZN_DescriptionRottableZone>
+	<FZN_DescriptionIndoorZone>劣化するものを保存するための備蓄ゾーンを作成します。</FZN_DescriptionIndoorZone>
+	<FZN_DescriptionOutdoorZone>屋内に保存する必要のない資源のための備蓄ゾーンを作成します。</FZN_DescriptionOutdoorZone>
+
+	<FZN_GizmoShadeLabel>Change Shade</FZN_GizmoShadeLabel>
+	<FZN_GizmoShadeDesc>Change the shade of this stockpile.</FZN_GizmoShadeDesc>
+
+</LanguageData>

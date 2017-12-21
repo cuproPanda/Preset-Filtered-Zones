@@ -3,49 +3,32 @@
 using RimWorld;
 using Verse;
 
-namespace PresetFilteredZones {
+namespace PresetFilteredZones
+{
 
-  public class Designator_PresetZoneAdd : Designator_ZoneAdd {
+  public class Designator_PresetZoneAdd : Designator_ZoneAddStockpile
+  {
 
-    protected PresetZoneType preset;
+    protected PresetZoneType presetZoneType;
     protected DesignationDef def;
 
 
-    protected override string NewZoneLabel {
-      get {
-        return Static.GetEnumDescription(preset);
-      }
-    }
+    //protected override string NewZoneLabel {
+    //  get {
+    //    return Static.GetEnumDescription(preset);
+    //  }
+    //}
 
-
-    protected override Zone MakeNewZone() {
-      return new Zone_PresetStockpile(preset, Find.VisibleMap.zoneManager);
-    }
-
-
-    public override AcceptanceReport CanDesignateCell(IntVec3 c) {
-      AcceptanceReport result = base.CanDesignateCell(c);
-      if (!result.Accepted) {
-        return result;
+    
+    protected override Zone MakeNewZone()
+    {
+      Zone_Stockpile zone = base.MakeNewZone() as Zone_Stockpile;
+      if (zone != null)
+      {
+        zone.settings.filter = DefaultFilters.GetFilterFromPreset(presetZoneType);
+        zone.color = PresetZoneColorUtility.NewZoneColor(presetZoneType);
       }
-      TerrainDef terrain = c.GetTerrain(Map);
-      if (terrain.passability == Traversability.Impassable) {
-        return false;
-      }
-      List<Thing> list = Map.thingGrid.ThingsListAt(c);
-      for (int i = 0; i < list.Count; i++) {
-        if (!list[i].def.CanOverlapZones) {
-          return false;
-        }
-      }
-      Zone zone = Map.zoneManager.ZoneAt(c);
-      if (zone != null && zone.GetType() == typeof(Zone_PresetStockpile)) {
-        Zone_PresetStockpile z = zone as Zone_PresetStockpile;
-        if (z.ZoneType != preset) {
-          return false;
-        }
-      }
-      return true;
+      return zone;
     }
   }
 }

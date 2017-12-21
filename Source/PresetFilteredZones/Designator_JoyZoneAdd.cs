@@ -4,9 +4,9 @@ namespace PresetFilteredZones {
   public class Designator_JoyZoneAdd : Designator_PresetZoneAdd {
 
     public Designator_JoyZoneAdd() {
-      zoneTypeToPlace = typeof(Zone_PresetStockpile);
-      preset = PresetZoneType.Joy;
-      defaultLabel = Static.GetEnumDescription(preset);
+      zoneTypeToPlace = typeof(RimWorld.Zone_Stockpile);
+      presetZoneType = PresetZoneType.Joy;
+      defaultLabel = Static.GetEnumDescription(presetZoneType);
       defaultDesc = Static.JoyZoneDesc;
       icon = Static.TexJoyZone;
       def = Static.DesJoyZone;
